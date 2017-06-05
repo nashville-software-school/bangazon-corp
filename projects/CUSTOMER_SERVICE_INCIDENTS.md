@@ -118,7 +118,7 @@ Enter resolution:
 >
 ```
 
-Make sure you have a class definition for each type of incident in your database. Use Python's ability to do multiple inheritance to share common properties, and implement the correct methods or properties on the appropriate types.
+Make sure you have a class definition for each type of incident in your database. ?????? Use ES6's ability to do multiple inheritance with mixins to share common properties, and implement the correct methods or properties on the appropriate types. ??????
 
 1. `Defective Product` and `Product Not Delivered` incident types are replaceable.
 1. `Defective Product` and `Product Not Delivered`, and `Fraud` incident types are refundable.
@@ -243,19 +243,20 @@ You got an introduction to unit testing during your front end course work. On th
 
 Server side code is all about constrained inputs and verifiable outputs. Perfect for unit testing.
 
-Read a [walkthrough of setting up unit tests](https://docs.python.org/3.5/library/unittest.html) in Python.
+You should use your unit tests as part of your design stage. Write as many unit tests as you can for your initial classes and methods. Once you feel you have good coverage for the basic logic of your application, then you begin writing simple implementations of the code in order to make the tests pass.
 
-Just like with Jasmine for your JavaScript, you should use your unit tests as part of your design stage. Write as many unit tests as you can for your initial classes and methods. Once you feel you have good coverage for the basic logic of your application, then you begin writing simple implementations of the code in order to make the tests pass.
+## Test Discovery
 
-#### Test Discovery
+It explains how you can run all tests inside a directory. This allows you to split your unit test suite into many, smaller, more maintainable modules, and the use a pattern matcher to find tests in all matching files.
 
-Read the [Test Discovery section](https://docs.python.org/3.3/library/unittest.html#unittest-test-discovery) of the Python docs. It explains how you can run all tests inside a directory. This allows you to split your unit test suite into many, smaller, more maintainable modules, and the use a pattern matcher to find tests in all matching files.
+[Mocha Link](http://mochajs.org/)
+[Chai Link](http://chaijs.com/)
+[Unit testing cheat sheet](https://gist.github.com/yoavniran/1e3b0162e1545055429e)
 
 ```
-python -m unittest discover -s . -p "Test*.py" -v
+Insert command line snippet
 ```
 
-#### Code Coverage
+## Optional: Code Coverage
 
-You can use the Python tool [coverage.py](https://coverage.readthedocs.io/en/latest/), to ensure that your test suite has [100% coverage](http://blog.liw.fi/posts/unittest-coverage/) of your application's logic.
-
+You can use the ??? tool to ensure that your test suite has 100% coverage of your application's logic.
