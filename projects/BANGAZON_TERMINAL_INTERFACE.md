@@ -132,17 +132,19 @@ Totals:           190         60        $1,902.81
 You will create a series of prompts that will allow the user to create various types of data in your ordering system.
 
 1. Start with writing unit tests. As a group, determine the core functionality of the application. Define classes and methods that you think you need to build. Do that before writing the implementation code for core logic. DO NOT WRITE TESTS FOR THE USER INTERFACE (menu and prompts).
-1. All classes and methods must be fully documented with docstrings.
 
 ## Test Discovery
 
-Read the [Test Discovery section](https://docs.python.org/3.3/library/unittest.html#unittest-test-discovery) of the Python docs. It explains how you can run all tests inside a directory. This allows you to split your unit test suite into many, smaller, more maintainable modules, and the use a pattern matcher to find tests in all matching files.
+It explains how you can run all tests inside a directory. This allows you to split your unit test suite into many, smaller, more maintainable modules, and the use a pattern matcher to find tests in all matching files.
+
+[Mocha Link](http://mochajs.org/)
+[Chai Link](http://chaijs.com/)
+[Unit testing cheat sheet](https://gist.github.com/yoavniran/1e3b0162e1545055429e)
 
 ```
-python -m unittest discover -s . -p "Test*.py" -v
+Insert command line snippet
 ```
 
 ## Optional: Code Coverage
 
-You can use the Python tool [coverage.py](https://coverage.readthedocs.io/en/latest/), to ensure that your test suite has [100% coverage](http://blog.liw.fi/posts/unittest-coverage/) of your application's logic.
-
+You can use the ??? tool to ensure that your test suite has 100% coverage of your application's logic.
