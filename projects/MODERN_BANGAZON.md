@@ -2,7 +2,7 @@
 
 ## Authentication
 
-You will learn how to use the built-in authentication and authorization modules in Django and DRF to create users and handle authenticating requests. You will learn how to use the Token Authentication system rather than the Session Authentication.
+You will learn how to use [Passport](http://passportjs.org/) and Sequelize to create users and handle authenticating requests. You will learn how to use the Token Authentication system rather than the Session Authentication.
 
 ## Requirements
 
