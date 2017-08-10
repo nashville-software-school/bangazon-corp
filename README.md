@@ -2,7 +2,7 @@
 
 ## The Personal E-Commerce Platform
 
-Bangazon LLC welcomes you to the team. You've been selected from a deep pool of candidates to help build the next, disruptive online platform. Our goal is to become the most personalized, and most powerful commericial platform for individuals all around the globe.
+Bangazon Corp welcomes you to the team. You've been selected from a deep pool of candidates to help build the next, disruptive online platform. Our goal is to become the most personalized, and most powerful commercial platform for individuals all around the globe.
 
 You are needed to make that happen.
 
@@ -16,14 +16,14 @@ While you are building out the Bangazon Platform, your leadership team will ensu
 
 ## Orientation
 
-Your first two weeks on the job will be you orientation to the technical languages, tools, and frameworks that you'll be using. You will also be introduced to the processes and procedures that you will need to follow to ensure high communication and high productivity for your team.
+Your first two weeks on the job will be your orientation to the technical languages, tools, and frameworks that you'll be using. You will also be introduced to the processes and procedures that you will need to follow to ensure high communication and high productivity for your team.
 
 1. Installation of required tools.
 1. Introduction to the language.
 1. Concepts of sustainable, scalable, object-oriented software development.
 1. Test driven development
 1. Overview of server-side development ecosystem
-1. How the Internet works
+1. How the Internet works <!-- TODO define the parameters of this -->
 1. Inheritance, composition, and aggregation
 1. Entity relationships
 1. Structured Query Language (SQL)

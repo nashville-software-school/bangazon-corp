@@ -1,33 +1,46 @@
+# Node.js Orientation Exercises
+
+This is a suggested order for completing the exercises in orientation.
+
+The `challenges` folder contains some optional extra brain-burning you can tackle at any time, when you feel ready. Do them solo, or grab a teammate or two and dive in. The calendar exercise is an especially good one to try with a group.
+
 # Order of Exercises
 
-This is a suggested order for completing the exercises in orientation:
+<!-- TODO: add links to exercises -->
+## Basics of NodeJS
+1. [Hello World](./00-hello_world.md)
+1. [ES6: Refresher and New Awesomeness](./01_es6-awesomeness.md)
+1. [Direct Execution](./)
+1. [Global Object](./)
+1. [Node Versions](./)
+1. [Command Line Args](./)
+1. [Node Modules](./)
 
-## Basic collections and classes
-1. [Dictionaries](./01_DICTIONARIES.md)
-1. [Sets](./02_SETS.md)
-1. [Lists](./03_LISTS.md)
-1. [Tuples](./04_TUPLES.md)
-1. [Classes](./05_CLASSES.md)
+## Intermediate Stuff
+1. [File IO](./)
+1. [Async File IO](./)
+1. [Streaming IO](./)
+1. [Modularity Diceroll](./)
 
-## Intermediate exercises
-1. [Family Dictionary](./06_FAMILY_DICTIONARY.md)
-1. [Kill Nickelback](./07_KILL_NICKELBACK.md)
-1. [RandomSquared](./08_RANDOMSQUARED.md)
-1. [Calculator](./09_TEST_CALCULATOR.md)
-1. [Animals](./10_TEST_ANIMALS.md)
+## Testing
+1. [TDD-101](./)
+1. [TDD-next_steps](./)
+1. Persist data with a [Bag of Loot](./)
 
-## Advanced exercises
-1. Persist data with a [Bag of Loot](./12_BAG_OF_LOOT.md)
-1. Persist data with a [Mary Margaret](./13_SHARED_MEMORIES.md)
+## Building Servers (for an Open API)
+1. [HTTP client](./)
+1. [HTTP server](./)
+1. [Express Hello World](./)
+1. [Express Middleware](./)
 
-## SQL exercises
+## Data Structure
+1. We will work through the [RDBMS and ERDs](./Mux history?) as a team in class.
 
-1. We will work through the [introduction to data relationships](./14_MUSIC_HISTORY.md) as a team in class.
-1. [Bangazon](./15_SQL_BANGAZON.md)
+## SQL (Structured Query Language)
+1. [Querying Music History DB](./)
+1. [Creating a new DB](./)
+1. [Querying our new DB](./)
+1. [Bangazon](./)
 
-### Online SQL Tutorial
 
-There are two online tutorials that are very handy tools if you ever want to quickly churn through the basics of the SQL language against a pre-built database.
 
-1. [Basic SQL Course](http://www.sqlcourse.com/intro.html)
-2. [Intermediate SQL Course](http://www.sqlcourse2.com/intro2.html)

@@ -1,5 +1,6 @@
 # Generators
 
+<!-- TODO Node it?? -->
 Generators a special function instances that will return a different value each time that the `__next__()` method is called on the instance. Let's look at a very simple example.
 
 ```py

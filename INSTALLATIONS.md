@@ -5,9 +5,10 @@
 The [DB browser for SQLite](http://sqlitebrowser.org/) will let you view, query and manage your databases during the course.
 
 ## Node
+<!-- TODO: description of installing node, but they should already all have it -->
 
 ## Troubleshooting
-
+<!-- TODO Not sure what this is in regards to as far as installs are concerned -->
 
 ## Hello, world
 

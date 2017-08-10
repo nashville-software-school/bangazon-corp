@@ -1,7 +1,8 @@
-# Debugging Python or Django
+# Debugging NodeJS
 
 You might remember from the front end foundations that you can place a `debugger;` statement anywhere in your JavaScript code, and the browser will stop at that line of code when the page loads so that you can inspect the state of your application.
 
+<!-- TODO: Node it -->
 In Python, you will use [the debugger](https://docs.python.org/2/library/pdb.html) to accomplish the same thing.
 
 You can place these statements anywhere in your code where you want the Python interpreter to pause, and start inspecting your code.

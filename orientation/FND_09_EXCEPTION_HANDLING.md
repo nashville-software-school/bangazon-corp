@@ -1,5 +1,6 @@
 # Basic Exception Handling
 
+<!-- TODO: Node it -->
 Because Python is a dynamically typed language, you need to carefully consider how to get the type of a variable and make no assumptions in your code.
 
 Let's look at some basic code and see what harmful side-effects can happen.
