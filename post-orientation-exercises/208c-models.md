@@ -1,5 +1,5 @@
 # Models
-
+<!-- TODO Replace with Sequelize -->
 Models are a representation in our code, of how our data is structured in our databse.
 
 you: But, my migration files give me all that information!
@@ -12,8 +12,8 @@ We will use [Bookshelf](http://bookshelfjs.org/) to create  our models.
 So far, in order to run our migrations and seed our databse, we've been using the knex cli to interact with our database, so this will be our first time actually requiring knex and bookshelf in our code.
 
 Since bookshelf relies on knex, we need to do the following:
-1. require knex, 
-1. pass it our knexfile as the config, 
+1. require knex,
+1. pass it our knexfile as the config,
 1. and save it to a variable
 1. pass our knex variable to bookshelf, and save *that* as a variable
 
@@ -37,11 +37,11 @@ But how can this model be useful? We can use the Monster model created with book
 you: I've been waiting months to use constructor functions again!
 
 ```
-let monster = new Monster();  
-monster.set('monster_name', 'Sully');  
-monster.set('variety', 'movie character');  
+let monster = new Monster();
+monster.set('monster_name', 'Sully');
+monster.set('variety', 'movie character');
 
-monster.save().then(function(m) {  
+monster.save().then(function(m) {
     console.log('Monster saved:', m.get('monster_name'));
 });
 
@@ -64,11 +64,11 @@ let Battle = bookshelf.Model.extend({
   }
 });
 ```
-Note that `forge()` is a Bookshelf method that is shorthand for instantiating a `new fooModel()`  
+Note that `forge()` is a Bookshelf method that is shorthand for instantiating a `new fooModel()`
 
 Now we can run sweet code like this, using our custom method, to see which monster and hero battled at Rhodes
 ```
-Battle.byLocation('Rhodes').then(function(u) {  
+Battle.byLocation('Rhodes').then(function(u) {
     console.log('Got battle:', u.get('monster_id'), u.get('hero_id'));
 });
 ```
@@ -76,7 +76,7 @@ Battle.byLocation('Rhodes').then(function(u) {
 and, since we defined the relationship that Battle has with Monster, we can get our monster along with all related battles in a single query, like so:
 
 ```
-Monster.forge({monster_name: 'Minotaur'}).fetch({withRelated: ['battles']})  
+Monster.forge({monster_name: 'Minotaur'}).fetch({withRelated: ['battles']})
 .then(function(monster) {
     console.log('Got monster:', monster.get('monster_name'), monster.get('monster_id'));
     console.log('Got battles:', monster.related('battles').toJSON());
@@ -89,12 +89,12 @@ In Bookshelf you also need to create a separate object for collections of a give
 
 ```
 //creating collections is easy peasy
-var Monsters = bookshelf.Collection.extend({  
+var Monsters = bookshelf.Collection.extend({
     model: Monster
 });
 
 //finds all monsters and turns them into JSON
-Monsters.forge().fetch().then(function(monsters) {  
+Monsters.forge().fetch().then(function(monsters) {
     console.log('Got a bunch of monsters!');
     monsters = monsters.toJSON()
     console.log("My awesome json monsters", monsters)

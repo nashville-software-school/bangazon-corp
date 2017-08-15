@@ -1,5 +1,5 @@
 # Sequelize Relationships, or how to deal with pivot tables and foriegn key relationships
-
+<!-- TODO: Sequelize -->
 Remember way back in the mists of time, three weeks ago or so, when you learned about creating many-to-many relationships with bridge/associative/pivot/join/thingamajig tables? (One of those terms is not in common use. Extra credit if you guess which one)
 
 Here's how to set up a many-to-many relationship using Knex/Bookshelf. Let's pretend we have a user who can select from a list of TV shows and add them to a collection of favorites. We would represent that process with `User` and `Show` models, as well as a `Favorite` model. `User` and `Show` would have a many-to-many relationship, as a show can have many users and users can have many shows.

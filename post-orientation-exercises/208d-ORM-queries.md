@@ -1,5 +1,5 @@
 # Queries with ORMS
-
+<!-- TODO Sequelize -->
 Once you have your models set up, writing queries in bookshelf is simpler than writing queries in raw SQL.
 
 Check out the following examples.
@@ -27,7 +27,7 @@ development: {
   }
 }
 ```
-Then, on each request you will get an output in your terminal that looks something like this:  
+Then, on each request you will get an output in your terminal that looks something like this:
 ```
 { method: 'select',
   options: {},

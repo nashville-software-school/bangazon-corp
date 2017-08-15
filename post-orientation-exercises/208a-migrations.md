@@ -1,5 +1,5 @@
 ## Using Sequelize for migrations
-  -->
+
 ### Migrations
 
 Have you noticed yet how wonderful github is? And have you also noticed how difficult it is to track your database in github? Migrations to the rescue! Migrations allow us to create our databases and then track changes to the database structure in our javascript files.
@@ -20,13 +20,15 @@ The migration file(s) Sequelize creates for you include two empty functions.
 Looks like this:
 
 ```
-<!-- change to SQLize exports.up = function(knex, Promise) { -->
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    // logic for transforming into the new state
+  },
 
-};
-
-<!-- change to SQLize exports.down = function(knex, Promise) { -->
-
-};
+  down: (queryInterface, Sequelize) => {
+    // logic for reverting the changes
+  }
+}
 ```
 Migrations are pretty awesome because they run two ways. Each migration you write should do something (in exports.up) that will run when you run your migrations, and also UNDO that same thing (in exports.down) that will run when you rollback your migration.
 
@@ -87,3 +89,4 @@ Try it again. Make another migration to add a second table to your database. How
 1. Create another migration that adds a new column to your hero table
 1. Create yet another migration that adds a weapons table to your database. The weapons should have names and should have a many to many relationship with your heroes.
 
+[Sequelize Migrations](http://docs.sequelizejs.com/manual/tutorial/migrations.html)

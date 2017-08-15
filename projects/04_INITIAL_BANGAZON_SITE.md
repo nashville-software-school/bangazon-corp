@@ -1,28 +1,30 @@
+<!-- TODO: Node-ify -->
 # Building the First Version of the Bangazon Site
 
 ## Learning Objectives
 
 * ERD Development
-* Django view templates
-* Django DB Models
+<!-- * Django view templates -->
+<!-- * Django DB Models -->
 * Migrations
 * Authentication
 
 ## Requirements
 
-You will be building a Django application that will be the first, stable version of the Bangazon Platform product site.
+You will be building an Express application that will be the first, stable version of the Bangazon Platform product site.
 
 ### Models
 
 1. Products will be created by customers, so make sure that you have a column on the `Product` model to store which customer created it.
-1. Add a new model named `ProductType`. Add a foreign key to `ProductType` in the `Product` model. It must be non-nullable, which means that you will likely need to provide a default value for your migration to work. The only fields needed are the primary key, and `Label`.
+1. Add a new model named `ProductType`. Add a foreign key to `ProductType` in the `Product` model. It must be non-nullable. The only fields needed are the primary key, and `Label`.
 1. Add a model named `PaymentType`.
 1. A `Customer` can have many payment types.
 1. The `Order` model must have a foreign key field to the `PaymentType` model, but it can be nullable. However, before an order can be completed, there must be a value for the `PaymentType` field.
 
 ### Generated Application
 
-Make sure you produce a layout with your `index.html` Django template for the application so that the structure of each page is consistent.
+<!-- Again with the "layout". What is? -->
+Make sure you produce a layout with your `index.html` Pug template for the application so that the structure of each page is consistent.
 
 1. User registration and login.
 1. Product creation form for user to sell a product.
@@ -39,14 +41,14 @@ Make sure you produce a layout with your `index.html` Django template for the ap
 
 ## Resources
 
-### Django Models and Migrations
+### Sequelize Models and Migrations
 
-Using the requirements above create a [model](https://docs.djangoproject.com/en/1.10/topics/db/models/) for each resource, and use [migrations](https://docs.djangoproject.com/en/1.10/topics/migrations/) to ensure your database structure is up to date.
+Using the requirements above create a [model](link to sqlize docs) for each resource, and use [migrations](link to sqlize docs) to ensure your database structure is up to date.
 
 ### Templates
 
-[Django template language](https://docs.djangoproject.com/en/1.10/ref/templates/language/)
+[Pug](pug docs)
 
 ### Form Helpers
-
-Django, like Angular, has many built-in [helper tags and filters](https://docs.djangoproject.com/en/1.10/ref/templates/builtins/) when building the site templates. We strongly recommend reading this documentation while building your templates.
+<!-- TODO: Make sure this is true : ) -->
+Pug, like Angular, has many built-in [helper tags and filters](pu docs) when building the site templates. We strongly recommend reading this documentation while building your templates.

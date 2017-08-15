@@ -158,7 +158,7 @@ const errorHandler = (err) => {
 Now we can pass our `errorHandler` function into the database methods as a callback to check for errors.
 
 ```js
-// If an error is thrown when this statement is ran, our function
+// If an error is thrown when this statement is run, our function
 // will log it to the console
 db.run("INSERT INTO employees VALUES (2, 'Jim', 'Halpert')", errorHandler);
 
