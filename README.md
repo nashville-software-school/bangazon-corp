@@ -8,26 +8,18 @@ You are needed to make that happen.
 
 In order to become a profitable, and sustainable organization, we need you to build all of the technology and tooling for the company.
 
-# Learning Objectives
-
-While you are building out the Bangazon Platform, your leadership team will ensure that the following foundational skills are developed by each team, and by each individual on the team.
-
-![Learning objectives](./learning-objectives.png)
-
 ## Orientation
 
-Your first two weeks on the job will be your orientation to the technical languages, tools, and frameworks that you'll be using. You will also be introduced to the processes and procedures that you will need to follow to ensure high communication and high productivity for your team.
+Your first three weeks on the job will be your orientation to the technical languages, tools, and frameworks that you'll be using. You will also be introduced to the processes and procedures that you will need to follow to ensure high communication and high productivity for your team.
 
 1. Installation of required tools.
 1. Introduction to the language.
 1. Concepts of sustainable, scalable, object-oriented software development.
 1. Test driven development
 1. Overview of server-side development ecosystem
-1. How the Internet works <!-- TODO define the parameters of this -->
-1. Inheritance, composition, and aggregation
+1. How the Internet works
 1. Entity relationships
 1. Structured Query Language (SQL)
-1. Object Relational Mapping (ORM)
 
 At the end of your orientation, your management team will determine which Development Team you will be assigned to for the next three months.
 

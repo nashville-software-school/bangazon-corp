@@ -5,10 +5,8 @@
 The [DB browser for SQLite](http://sqlitebrowser.org/) will let you view, query and manage your databases during the course.
 
 ## Node
-<!-- TODO: description of installing node, but they should already all have it -->
+You installed this on day one of NSS, and no additional updates are needed. Lucky you!
 
-## Troubleshooting
-<!-- TODO Not sure what this is in regards to as far as installs are concerned -->
 
 ## Hello, world
 
@@ -19,15 +17,15 @@ console.log("Hello!")
 console.log("Is it me you're looking for?")
 ```
 
-In the CLI, execute the following command in the `python` directory.
+In the CLI, execute the following command in the `node` directory.
 
 ```bash
 node hello.js
 ```
 
-## Node Interpreter
+## Node REPL
 
-You can use the CLI interpreter to enter and run some code that you just want to test out without having to put it in a file and running it.
+You can run Node in your terminal by jumping into the Node [REPL](https://www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm) to enter and run some code that you just want to test out without having to put it in a file and run it. Just type `node` and hit enter.
 
 ```
 $ node
@@ -36,3 +34,5 @@ $ node
 
 bow down to me
 ```
+
+`ctrl + C` twice to exit the 

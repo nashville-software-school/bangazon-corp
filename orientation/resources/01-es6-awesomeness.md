@@ -104,7 +104,7 @@ var speak = dog.speak;
 ```
 Here's the new look:
 ```
-const { name, speak } = dog;`
+const { name, speak } = dog;
 console.log( `${name} says ${speak()}` ); // returns "Murphy says woof!"
 ```
 Don't like being stuck with the property names as your variables? We gotcha covered:

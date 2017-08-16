@@ -22,18 +22,20 @@ Once your team completes a project (see Definition of Done below), your team, al
 
 There is a very clear [Definition of Done](https://www.agilealliance.org/glossary/definition-of-done/) that you must adhere to. If you do not, your manager will not approve the project for deployment.
 
-1. The project must be fully documented. This includes the following:
-    1. Complete README that documents the steps to install the code, how to install any dependencies, or system configuration needed.
-    2. Every class must be documented with purpose, author, and methods.
-    3. Every method must be documented with purpose and argument list - which itself must contain a short purpose for each argument.
+1. The project must be fully documented with a complete README that outlines the steps to install the code, how to install any dependencies, or system configuration needed, as well as instructions for how to run the project once it is configured.
 1. The project must be able to run fully, and without errors, on each teammate's system.
 1. Fulfills every requirement.
 1. Every line of code has been peer reviewed.
 1. For projects that require unit testing, core functionality must be identified and have at least one test for each.
+1. The code must be properly formatted and deploy-ready
+    1. No commented-out code
+    1. No leftover `console.log`s
+    1. Consistent spacing between items, with no unneccesary blank lines
+    1. The code must look like it was written by one person. The team should review this [JavaScript style guide](https://contribute.jquery.org/style-guide/js/#comments) and agree to abide by it or a similar common standard.
 
 ### Pull Requests
 
-When you submit a pull request to the project repository, it should provide all of the information necessary for one of your teammates to verify its completeness.
+When you submit a pull request to the project repository, it should provide all of the information necessary for one of your teammates to verify its completeness. Empty PR comments are not acceptable. Hold each other accountable for using meaningful commit messages and for documenting the purpose and scope of the included work, plus any other relevant communication to the team.
 
 #### Descriptions
 
@@ -55,3 +57,5 @@ You must provide clear steps for any teammate to test the code.
 #### Link to Feature Ticket
 
 At the end of the PR description, you must provide a hyperlink to the ticket that contains a description of the feature you are working on.
+
+[How to write the perfect PR](https://github.com/blog/1943-how-to-write-the-perfect-pull-request);

@@ -1,4 +1,4 @@
-# Node.js versions
+# Node.js versions -- This is an optional exercise, but reading the text is a good idea for everyone
 
 ## Introduction
 Node.js has several actively maintained versions. The current version of Node.js
@@ -10,7 +10,7 @@ term support plan.
 
 While we will primarily using the most current version of Node.js for these
 exercises, not everyone has this luxury. On the surface, the current version of
-Node.js should work the same as a prior version, this is not always the case.
+Node.js should work the same as a prior version, but this is not always the case.
 The deeper the integrations or customizations of Node.js that your codebase
 uses, the more effort is required to upgrade to a newer version. For this
 reason, the Node.js maintainers are committed to fixing bugs, updating security,
@@ -26,7 +26,7 @@ you can be sure that it will work and be secure at least until April 2019. At
 that point, if the current schedule is maintained, you can either continue to
 run version 6 without official support, upgrade your Node.js to version 8 (the
 next LTS release), or upgrade all the way to version 12 which is scheduled to be
-released in April of 2019. However, you can expect upgrade from version 6 to
+released in April of 2019. However, you can expect that upgrading from version 6 to
 version 8 will be simpler than from version 6 to version 12.
 
 Learning and adopting a new technology is an investment, and this support
