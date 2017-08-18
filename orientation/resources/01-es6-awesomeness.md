@@ -239,20 +239,31 @@ let [,,,,...numsJr] = nums
 console.log("numsJr", numsJr); // returns, [5,6,7,8,9]
 ```
 
-#### [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-You learned how to use these in the front end. But just in case you didn't know the nane, we mention them here. Beats concatenation hands-down.
+#### [Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
-```
-let quote = "Mary said, 'I love mixing double and single quotes!'";
-let myId = "quote"
+#### [Maps](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+#### What MDN says
+The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value. Sounds just like a regular old object. What's the difference?
 
-// ick
-let log = "<p class='" + myId + '">" + quote + "</p>";
+TODO: Pare this down and paraphrase:
+Objects are similar to Maps in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Because of this (and because there were no built-in alternatives), Objects have been used as Maps historically; however, there are important differences that make using a Map preferable in certain cases:
 
-// hip
-let log = `<p class="${myId}">${quote}</p>`
-```
+    An Object has a prototype, so there are default keys in the map that could collide with your keys if you're not careful. As of ES5 can be bypassed by using map = Object.create(null), but is seldom done.
+    The keys of an Object are Strings and Symbols, whereas they can be any value for a Map, including functions, objects, and any primitive.
+    You can get the size of a Map easily with the size property, while the size of an Object must be determined manually.
 
+This does not mean you should use Maps everywhere. If you're not sure which one to use, ask yourself the following questions:
+
+    Are keys usually unknown until run time? Do you need to look them up dynamically?
+    Do all values have the same type? Can they be used interchangeably?
+    Do you need keys that aren't strings?
+    Are key-value pairs frequently added or removed?
+    Do you have an arbitrary (easily changing) number of key-value pairs?
+    Is the collection iterated?
+
+If you answered 'yes' to any of those questions, that is a sign that you might want to use a Map. Contrariwise, if you have a fixed number of keys, operate on them individually, or distinguish between their usage, then you probably want to use an Object.
+
+  
 On to the exercise!
 
 ## Requirements

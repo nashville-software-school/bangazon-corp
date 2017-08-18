@@ -8,13 +8,12 @@
 1. [Resources](#resources)
 
 ## Prerequisites
-<!-- TODO replace commented out code with Node equivalents -->
 * Migrations
 <!-- * [View templates/Layouts](https://docs.asp.net/en/latest/mvc/views/overview.html) -->
 * Forms
 * Controllers
 * ERD development
-* Routing
+* Express routing
 <!-- * Yeoman, and the ASP.NET generator, [installed](#installing-yeoman-and-the-aspnet-generator) -->
 
 ## What You Will Be Learning
@@ -28,12 +27,11 @@ All views in this application will be generated on the server, using templates, 
 You learned about view templates when you used Angular, but now your application server will be serving a fully built template to any client request instead of the client building the view.
 
 ### Layouts
-<!-- Node version of this? -->
-To keep your code DRY between different view templates, you should use a <!-- what? --> to define the general structure of your site, and the individual page templates will be injected into the overall layout.
+To keep your code DRY between different view templates, you should create a standard layout with your `index.html` Pug template for the application so that the structure of each page is consistent. Define the general structure of your site in that template, then the individual page templates will be injected into the overall layout.
 
 ### Forms
 
-Express has no functionality for handling the payload, or request data on its own, but there are npm modules you can install and include to take care of it. Look at `body-parser` as the most widely used example.
+Express has no built-in functionality for easily handling the payload, or request data, on its own, but there are npm modules you can install and include to take care of it. Look at `body-parser` as the most widely used example.
 
 ## Requirements
 
@@ -87,6 +85,18 @@ Produce the following views.
 
 ## Resources
 
-### Pug Templates
+### Sequelize Models and Migrations
 
-Pug is a clean, whitespace sensitive syntax for writing html. We will be using the Pug templating engine with our Express server. Check out the [PugJs docs](https://pugjs.org/api/getting-started.html) for more information. You will find them *very* similar to Handlebar templates that you used in the client side course of NSS.
+Using the requirements above use Sequelize to create a [model](http://docs.sequelizejs.com/manual/tutorial/models-definition.html) for each resource, and use [migrations](link to sqlize docs) to ensure your database structure is up to date. Remember to start with a `.sequelizerc` file, and to run `sequelize init` to generate the needed directories and files.   
+[Sequelize CLI docs](https://github.com/sequelize/cli)
+
+### Templates
+
+Getting started with [Pug](https://pugjs.org/api/getting-started.html)
+
+### Familiar Friends
+Pug, like Angular and Handlebars, has many built-in helper tags and filters when building the site templates. We strongly recommend reading this documentation while building your templates.  
++ [Iteration](https://pugjs.org/language/iteration.html)  
++ [Conditionals](https://pugjs.org/language/conditionals.html)  
++ [Includes](https://pugjs.org/language/conditionals.html)  
++ [Interpolation](https://pugjs.org/language/interpolation.html)

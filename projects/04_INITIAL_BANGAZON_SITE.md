@@ -1,12 +1,11 @@
-<!-- TODO: Node-ify -->
 # Building the First Version of the Bangazon Site
 
 ## Learning Objectives
 
+* Pug templates
 * ERD Development
-<!-- * Django view templates -->
-<!-- * Django DB Models -->
-* Migrations
+* Sequelize DB Models
+* Sequelize Migrations
 * Authentication
 
 ## Requirements
@@ -22,9 +21,7 @@ You will be building an Express application that will be the first, stable versi
 1. The `Order` model must have a foreign key field to the `PaymentType` model, but it can be nullable. However, before an order can be completed, there must be a value for the `PaymentType` field.
 
 ### Generated Application
-
-<!-- Again with the "layout". What is? -->
-Make sure you produce a layout with your `index.html` Pug template for the application so that the structure of each page is consistent.
+Make sure you produce a standard layout with your `index.html` Pug template for the application so that the structure of each page is consistent.
 
 1. User registration and login.
 1. Product creation form for user to sell a product.
@@ -42,13 +39,9 @@ Make sure you produce a layout with your `index.html` Pug template for the appli
 ## Resources
 
 ### Sequelize Models and Migrations
-
-Using the requirements above create a [model](link to sqlize docs) for each resource, and use [migrations](link to sqlize docs) to ensure your database structure is up to date.
+Using the requirements above use Sequelize to create a [model](http://docs.sequelizejs.com/manual/tutorial/models-definition.html) for each resource, and use [migrations](link to sqlize docs) to ensure your database structure is up to date. Remember to start with a `.sequelizerc` file, and to run `sequelize init` to generate the needed directories and files.   
+[Sequelize CLI docs](https://github.com/sequelize/cli)
 
 ### Templates
 
-[Pug](pug docs)
-
-### Form Helpers
-<!-- TODO: Make sure this is true : ) -->
-Pug, like Angular, has many built-in [helper tags and filters](pu docs) when building the site templates. We strongly recommend reading this documentation while building your templates.
+[Pug](https://pugjs.org/api/getting-started.html)

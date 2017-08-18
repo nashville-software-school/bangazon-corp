@@ -19,10 +19,7 @@ List of other ["awesome"](https://github.com/sindresorhus/awesome) tiny
 Node.js modules: https://github.com/parro-it/awesome-micro-npm-packages
 
 ## Requirements
-<!-- TODO: Find and insert starter code  -->
-Create a program that performs a dice roll. You will need a folder `dice-roll` with at
-least 5 files to accomplish this task. See the 01 templates folder in this
-directory for starter code and structure:
+Create a program that performs a dice roll. You will need a folder `dice-roll` with at least 5 files to accomplish this task.
 
 ```
 01/
@@ -60,9 +57,23 @@ with the dice notation i.e. "1d6" or "2d40". The `roll` method should
 accept a dice notation `String` and produce a random `Number` which is
 the result of the dice roll.
 
-<!-- TODO: Update this file link -->
 The `cli.js` file should work like a controller. It should have no logic
-on its own. Use the sample code from [this file](https://github.com/nashville-software-school/node-milestones/blob/master/01-foundations/templates/01/lib/cli.js) as-is.
+on its own. Use this sample code to get you started:
+
+```js
+'use strict'
+
+process.title = 'Dice Roll'
+
+const { argv: [,, ...args] } = process
+const { count, sides } = require('./parse-args')(args)
+const { roll, toDiceNotation } = require('./dice')
+
+const dice = toDiceNotation({count, sides})
+const total = roll(dice)
+
+console.log(total)
+```
 
 Expected:
 

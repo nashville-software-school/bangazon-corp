@@ -1,4 +1,4 @@
-# Node.js versions -- This is an optional exercise, but reading the text is a good idea for everyone
+# Node.js versions -- This is an **optional** exercise, but reading the text is a good idea for everyone
 
 ## Introduction
 Node.js has several actively maintained versions. The current version of Node.js
@@ -37,12 +37,7 @@ to work.
 
 ### [Node Version Manager][nvm]
 
-TODO: Using nvm
-
-## Topics Covered
-
--   Command-line applications
--   Modern Node.js version management
+NVM is a helpful package that facilitates switching between multiple versions of Node.js. This [article](https://www.sitepoint.com/quick-tip-multiple-versions-node-nvm/) walks you through all the hows, wheres and whys of installing and implementing NVM.
 
 ## Requirements
 
