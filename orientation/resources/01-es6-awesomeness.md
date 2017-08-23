@@ -1,5 +1,5 @@
 # ES6 Awesomeness
-<!-- TODO: Add map and set -->
+
 ## Introduction
 You were introduced to some of the latest JS syntax, defined in the ECMAScript specification most often referred to  as ES6, during your front-end course. We will be using ES6 extensively in the Node.js portion as well.
 Let's review some of the features you are familiar with, as well as some that may be new to you.
@@ -240,30 +240,102 @@ console.log("numsJr", numsJr); // returns, [5,6,7,8,9]
 ```
 
 #### [Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+#### What MDN says
+> Set objects are collections of values. You can iterate through the elements of a set in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.
+
+Sets act a lot like arrays, in that they are a container for a bunch of values. You can even run a `.forEach` on them. But that guard against duplicate values is certainly different from how arrays work. Sets also have some very handy methods, such as `.delete`, which simply takes the item you want to remove as an argument, and `.has`, which checks if an item exists in the set. 
+
+#### In Action
+
+```js
+const awesomeSet = new Set();
+
+awesomeSet.add(10); // Set { 10 }
+awesomeSet.add(6); // Set { 10, 6 }
+awesomeSet.add(6); // Set { 10, 6 } No dupes allowed!
+awesomeSet.add("set 'em up, knock 'em down"); // Set { 10, 6, "set 'em up, knock 'em down" }
+
+var tinyObj = {a: 1, b: 2};
+awesomeSet.add(tinyObj);
+
+awesomeSet.add({a: 1, b: 2}); // Each object is unique. tinyObj is referencing a different object so this is okay
+
+awesomeSet.has(10); // true
+awesomeSet.has(35); // false, 35 has not been added to the set
+awesomeSet.has(Math.sqrt(36));  // true
+awesomeSet.has("Set 'em up, Knock 'em Down".toLowerCase()); // true
+
+// This is pretty interesting. It retains a reference to the object we added, but when we log out
+// awesomeSet below, there's no mention of the tinyObj variable name.
+awesomeSet.has(tinyObj); // true
+
+awesomeSet.size; // 5
+
+awesomeSet.delete(10); // removes 10 from the set
+awesomeSet.has(10);    // false, 10 has been removed
+
+awesomeSet.size; // 4, we just removed one value
+console.log(awesomeSet);// Set {1, "some text", Object {a: 1, b: 2},
+```
 
 #### [Maps](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 #### What MDN says
-The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value. Sounds just like a regular old object. What's the difference?
+> The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value. 
 
-TODO: Pare this down and paraphrase:
-Objects are similar to Maps in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Because of this (and because there were no built-in alternatives), Objects have been used as Maps historically; however, there are important differences that make using a Map preferable in certain cases:
+Sounds just like a regular old Object. What's the difference?  
 
-    An Object has a prototype, so there are default keys in the map that could collide with your keys if you're not careful. As of ES5 can be bypassed by using map = Object.create(null), but is seldom done.
-    The keys of an Object are Strings and Symbols, whereas they can be any value for a Map, including functions, objects, and any primitive.
-    You can get the size of a Map easily with the size property, while the size of an Object must be determined manually.
+Both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Basically, you have been using Objects as Maps most of the time in your work so far;But, there are some..ahem..._key_ differences that make using a Map preferable sometimes. Some examples:
 
-This does not mean you should use Maps everywhere. If you're not sure which one to use, ask yourself the following questions:
++ The keys of an Object are strings, whereas they can be **any value** for a Map, including functions, objects, and any primitive. Whoah. A function as a key? Mind melting. (It's beyond the scope of this intro to get into _why_ you would do this, but if you're curious, checkout out this [SO answer](https://stackoverflow.com/questions/45040871/es6-map-why-when-to-use-an-object-or-a-function-as-a-key) 
++ You can get the size of a Map easily with the `size` property, while the size of an Object must be determined manually. 
++ It's easy to empty a Map with `clear()`
 
-    Are keys usually unknown until run time? Do you need to look them up dynamically?
-    Do all values have the same type? Can they be used interchangeably?
-    Do you need keys that aren't strings?
-    Are key-value pairs frequently added or removed?
-    Do you have an arbitrary (easily changing) number of key-value pairs?
-    Is the collection iterated?
+When do you use one over the other? Good question. Here's one way to look at it: Consider a Map when you need a key-value _collection_. A good indicator that you need a collection is when you add and remove values dynamically from the collection, and especially when you don't know those values beforehand (e.g. they're read from a database, input by the user, etc).
 
-If you answered 'yes' to any of those questions, that is a sign that you might want to use a Map. Contrariwise, if you have a fixed number of keys, operate on them individually, or distinguish between their usage, then you probably want to use an Object.
+Consider using objects when you know which and how many properties the object has while writing the code - when their shape is static, ie when you need a _record_. You will recognize this is the case when you don't need to use bracket notation to access the keys, for example, meaning you know the keys and can use dot notation to access those keys' values.
 
-  
+```js
+// instantiate a new Map object
+const fooMap = new Map();
+
+// define some random variables
+const keyString = "Check this out",
+      keyObj = {color: "red", hexVal: "#FF0000"},
+      keyFunc = function() {};
+
+// setting the values: the keys are the variables from above and each value is some kind of value associated with that variable
+
+// Setting a description of what `keyString` is
+fooMap.set(keyString, 'This is part of a catch phrase');
+// Lets make an array of `keyObj`'s keys and associate them with each other
+fooMap.set(keyObj, Object.keys(keyObj));
+// Maybe we want to keep track of how many times this function gets called
+fooMap.set(keyFunc, {callCount : 0});
+
+//Setting a value kind of like you're used to doing with an object, just a key / value pair -ish
+fooMap.set("name", "Frederica");
+
+fooMap.size; // 3
+
+// getting the values with the Map's `get` method
+fooMap.get(keyString);    // 'This is part of a catch phrase'
+fooMap.get(keyObj);       // ["color", "hexVal"]
+fooMap.get(keyFunc);      // {callCount: 0}
+fooMap.get(name);         // "Frederica"
+
+fooMap.get("Check this out.");   // 'This is part of a catch phrase'
+                                // because keyString === "Check this out."
+
+fooMap.get({});           // undefined, because keyObj !== {}. Two objs never equal each other
+fooMap.get(function() {}) // undefined, because keyFunc !== function () {}. Because ditto
+
+fooMap.values()           // {"This is part of a catch phrase", Array(2), {…}, "Frederica"}
+fooMap.entries()          // {"Check this out" => "This is part of a catch phrase", {…} => Array(2), ƒ => {…}, "name" => "Frederica"}
+```
+
+Some day soon you may see `Map` and `Set` in use quite a bit, but for now they will be fairly rare birds. Think of them as two new friends you can invite to the party but don't have to chat with much for the time being. Just stroll over to them every now and then when you think of it and see if you get along. 
+
+
 On to the exercise!
 
 ## Requirements
