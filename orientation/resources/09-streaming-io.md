@@ -149,11 +149,12 @@ Pushing the strings "1" to "100"
 let i = 0
 
 readStream._read = () => {
-  if (i < 100) {
+  if (i > 100) {
     readStream.push(null) // when null is pushed to the stream, it emits an 'end' event
   }
   else {
     readStream.push(`${i}`)  // have to make i a string. Streams only handle strings and buffers
+    i++
   }
 }
 ```
