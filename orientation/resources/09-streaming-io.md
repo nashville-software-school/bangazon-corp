@@ -256,9 +256,9 @@ readStream.push('bar\n')
 readStream.push(null)
 
 const JSONStringify = Transform()
-JSONStringify._transform = (buffer, _, cb) => (
+JSONStringify._transform = (buffer, _, cb) => {
   cb(null, `${JSON.stringify(buffer.toString())}\n`)
-)
+}
 
 readStream.pipe(JSONStringify).pipe(process.stdout)
 ```
@@ -304,16 +304,17 @@ $ cat 09_Caps.json
 
 ## Additional Reading
 
-[EOF][eof]
-[EOT][eot]
-[FIN][fin]
-[Node.js Streams Handbook][streamhandbook]
-[Node.js streams][node.js streams]
-[`pipe`][pipe]
-[`createReadStream`][createreadstream]
-[Streams2][streams2]
-[Buffers][https://nodejs.org/api/buffer.html]
-[`writeFile`][writefile]
+[EOF][eof]  
+[EOT][eot]  
+[FIN][fin]  
+[Node.js Streams Handbook][streamhandbook]  
+[Node.js streams][node.js streams]  
+[`pipe`][pipe]  
+[`createReadStream`][createreadstream]  
+[Streams2][streams2]  
+[Buffers][Buffers]  
+[`writeFile`][writefile]  
+[`appendFile`][appendfile]  
 
 [eof]: https://en.wikipedia.org/wiki/End-of-file
 [eot]: https://en.wikipedia.org/wiki/End-of-Transmission_character
@@ -323,5 +324,6 @@ $ cat 09_Caps.json
 [createreadstream]: https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options
 [streamhandbook]: https://github.com/substack/stream-handbook
 [streams2]: https://nodejs.org/en/blog/feature/streams2/
+[Buffers]: https://nodejs.org/api/buffer.html
 [writefile]: https://nodejs.org/api/fs.html#fs_fs_readfile_file_options_callback
 [appendfile]: https://nodejs.org/api/fs.html#fs_fs_appendfile_file_data_options_callback
