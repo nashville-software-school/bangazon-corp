@@ -6,25 +6,25 @@ As a refresher example, take a look at this:
 
 ```js
 const Task = {
-	setID: (ID) => { this.id = ID; },
-	outputID: () => { console.log( this.id ); }
+	setID: function(ID) { this.id = ID; },
+	outputID: function() { console.log( this.id ); }
 };
 
 // make `XYZ` delegate to `Task`
 const XYZ = Object.create( Task );
 
-XYZ.prepareTask = (ID,Label) => {
+XYZ.prepareTask = function(ID,Label) {
 	this.setID( ID );
 	this.label = Label;
 };
 
-XYZ.outputTaskDetails = () => {
+XYZ.outputTaskDetails = function() {
 	this.outputID();
 	console.log( this.label );
 };
 ```
 
-First an object called `Task` gets created. It has a couple of nifty methods defined on it, that another object, `XYZ`, leverages to help define its own unique methods. This sharing of access to proerties is made possible by the prototype chain, which JS uses to link `XYZ` to `Task`. If we call `XYZ.outputTaskDetails`, it works despite that fact that `outputID` has never been set as a property of `XYZ`. JavaScript will look for `outputID` on the `XYZ` object, but it won't be there. But because `TASK` is linked to `XYZ`, JavaScript can "travel" up the prototype chain and look for the property there. 
+First an object called `Task` gets created. It has a couple of nifty methods defined on it, that another object, `XYZ`, leverages to help define its own unique methods. This sharing of access to properties is made possible by the prototype chain, which JS uses to link `XYZ` to `Task`. If we call `XYZ.outputTaskDetails`, it works despite that fact that `outputID` has never been set as a property of `XYZ`. JavaScript will look for `outputID` on the `XYZ` object, but it won't be there. But because `TASK` is linked to `XYZ`, JavaScript can "travel" up the prototype chain and look for the property there. 
 
 With all of that fresh in your brain again, let's look at a couple of helpful, but distictly different ways to build objects.
 
@@ -49,7 +49,7 @@ Body.init = function() {
     this.the_liver = Object.create(Liver);
 };
 ```
-I this example we create brand new objects, linked to the `Pancreas` and `Liver` objects, inside the init function. They would go away if Body is destroyed, since they are part of the body.
+In this example we create brand new objects, linked to the `Pancreas` and `Liver` objects, inside the init function. They would go away if Body is destroyed, since they are part of the body.
 
 ## Aggregation
 
