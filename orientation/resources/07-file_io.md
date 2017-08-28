@@ -65,5 +65,5 @@ file is in.
 
 ## Additional Reading
 
-[Read Files with Node.js][http://stackabuse.com/read-files-with-node-js/]
-[Loading modules with require()][https://bytearcher.com/articles/loading_modules_with_require/]
+[Read Files with Node.js](http://stackabuse.com/read-files-with-node-js/)
+[Loading modules with require()](https://bytearcher.com/articles/loading_modules_with_require/)
