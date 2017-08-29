@@ -1,7 +1,7 @@
 # Practice SQL queries all day long...
 
 ## Setup
-Download the [Northwind db](./assets/northwind.db)  
+Download the [Northwind db](https://github.com/nashville-software-school/bangazon-corp/raw/gk-challenges/orientation/resources/challenges/assets/northwind.db)  
 Open the database with DB Browser
 
 ## Requirements
