@@ -35,19 +35,10 @@ sqlite3 is an npm module that provides a software interface with a SQLite databa
 const { Database } = require('sqlite3').verbose();
 
 // Returns a new database object and automatically opens the database
+// Changes will persist once connection closes
 // Database method accepts a callback function for successful connection
 const db = new Database('example.sqlite', () => console.log('Connected!'));
 ```
-
-
-### Creating a database
-
-```js
-// Creates a database which will be written to a file on disk
-// Changes will persist once connection closes
-const db = new Database('db/example.sqlite');
-```
-
 
 ### Creating a Table
 
