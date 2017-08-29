@@ -5,7 +5,7 @@ Download the [Northwind db](https://github.com/nashville-software-school/bangazo
 Open the database with DB Browser
 
 ## Requirements
-1. Get a list of all the orders processed with category name as an input parameter
+1. Get a list of all the orders processed with category name (as an input parameter) *not implemented yet
 
 1. Get the product name , count of orders processed
 
