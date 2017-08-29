@@ -22,7 +22,7 @@ Node.js modules: https://github.com/parro-it/awesome-micro-npm-packages
 Create a program that performs a dice roll. You will need a folder `dice-roll` with at least 5 files to accomplish this task.
 
 ```
-01/
+dice-roll/
     bin/
         diceroll
     lib/
