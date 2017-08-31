@@ -31,7 +31,7 @@ Also, add the following to your package.json:
     "test": "mocha -R list --watch --recursive"
   }
 ```
-This will tell mocha to run the tests every time you update a test file, to use the "list" reporter (look at the docs to pick another style if you'd like), and to look into any nested test folders for additional test files (not necessary at this point, but nice to know you can do that), when you run `npm test` on the command line.
+This will tell mocha to run the tests every time you update a test file, to use the "list" reporter (look at the docs to pick another style if you'd like), and to look into any nested test folders for additional test files (not necessary at this point, but nice to know you can do that), when you run `npm test` on the command line. If your tests come out all one color, try adding the `--colors` flag as well.
 
 ### test folder
 Create a `test` directory to store your test files in. Mocha will default to looking there for your tests. Can I type 'test' too many times? testtesttest. Looks like I can't.
