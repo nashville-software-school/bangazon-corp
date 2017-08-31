@@ -20,7 +20,7 @@ These are the customers of your service. The system must track the person who is
 
 ### Buyers
 
-A buyer is an third-party company that one of your customers sells ad space to. These buyer will pay your customer money in order for them to include their product in one of their marketing emails.
+A buyer is a third-party company that one of your customers sells ad space to. These buyer will pay your customer money in order for them to include their product in one of their marketing emails.
 
 1. Each time a consumer interacts with a buyer's ad in an email, they will get paid a contracted amount of money.
 1. The amount a buyer is paid can vary depending on the campaign.
