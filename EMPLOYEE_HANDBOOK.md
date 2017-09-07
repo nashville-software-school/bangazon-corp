@@ -4,7 +4,7 @@
 
 ### Mentoring
 
-Your manager is dedicated to providing all the mentoring and guidance that you need while you build the Bangazon Platform. This includes training you on foundational concepts, tooling and procedures. Your manager will also provide you will instruction to show you how to implement basic examples of code that you will need for a larger project.
+Your manager is dedicated to providing all the mentoring and guidance that you need while you build the Bangazon Platform. This includes training you on foundational concepts, tooling and procedures. Your manager will also provide you with instruction to show you how to implement basic examples of code that you will need for a larger project.
 
 ### Daily Stand Up
 
