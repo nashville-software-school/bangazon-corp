@@ -1,7 +1,7 @@
 # ERDs 2: The SQL (get it?)
 
 ## Introduction
-Before we move on to shiny, new things we are going to ramp up the difficulty a bit, and introduce you to the [Chinook Database](https://chinookdatabase.codeplex.com/), a sample db that countless back end devs have used for practicing their SQL skills. As the site tells us, "The Chinook data model represents a digital media store, including tables for artists, albums, media tracks, invoices and customers." 
+Before we move on to shiny, new things we are going to ramp up the difficulty a bit, and introduce you to the [Chinook Database](https://github.com/lerocha/chinook-database/blob/master/ChinookDatabase/DataSources/Chinook_Sqlite.sqlite), a sample db that countless back end devs have used for practicing their SQL skills. As the site tells us, "The Chinook data model represents a digital media store, including tables for artists, albums, media tracks, invoices and customers." 
 
 ## Instructions
 1. Hit the link above to download and unzip the file.
