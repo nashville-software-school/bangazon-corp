@@ -49,4 +49,3 @@ Build an ERD to define the properties of the following resources and the relatio
 #### Customers
 * A customer's first and last name should be recorded separately
 * The date that a customer created an account must be tracked
-* If a customer does not interact with the system for over 240 days, they will be marked as inactive
