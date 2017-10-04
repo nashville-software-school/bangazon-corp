@@ -34,27 +34,18 @@ By tracking the changes of your migration files in github, you can keep track of
 ## Exercise
 We're finally ready to create a database, fill it with useful tables, and then knock the whole thing down again.
 
-
-
-
-
-
-
-
-
-`sequelize migration:create --name create_beaches`, define a `beaches` table in the exports.up, and then drop the table in exports.down. Beaches have names, unique id's, locations, and any other descriptive columns you feel like adding.
-
-Now- run `sequelize db:migrate` and check to see if your "beaches" table has been added to your database, using pgAdmin or your psql terminal.
+1. Crack open the migration files created for you when you used the Sequelize CLI to define your models and take a peek. They should contain all the properties you declared when you ran `sequelize model:create` earlier.
+1. Run `sequelize db:migrate` and check to see if your "beaches" and "lifeguards" tables have been added to your database, using your psql terminal. Run `\c sandcastledb` (if that's what you named your database) to connect to the db, then `\d` to print a list of the table names.
 
 It looks awesome? Let's get rid of it! `sequelize migrate:undo:all` and check to make sure that table is gone.
 
 All done!
 Just kidding...
 
-Try it again. Make another migration to add a second table to your database. How about some tools to build sandcastles with? Run `sequelize db:migrate` and `sequelize migrate:undo:all` a couple of times to get the hang of it.
+Try it again. Make another migration to add another table to your database. How about some tools to build sandcastles with? Run `sequelize db:migrate` and `sequelize migrate:undo:all` a couple of times to get the hang of it.
 
 ### Bonus
-1. Create another migration, but instead of a whole new table, this migration should add a new column to your existing beaches table.
+1. Create another migration, but instead of a whole new table, this migration should add a new column to your existing beaches table. _Hint: see the 'Woops! Forgot something... ' section of this helpful [Gist](https://gist.github.com/JoeKarlsson/ebb1c714466ae3de88ae565fa9ba4779)_
 1. Create yet another migration that adds a lifeguards table to your database. The lifeguards should have names and should have a one to many relationship with your beaches.
 
 [Sequelize Migrations](http://docs.sequelizejs.com/manual/tutorial/migrations.html)

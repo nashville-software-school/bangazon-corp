@@ -50,10 +50,10 @@ Now that `associate` has been added as a property of a Beach, what the heck is i
 ...
 
 Beach.associate = function(models) {
-    Beach.hasMany(models.Lifeguard, {
-      foreignKey: 'lifeguardId'
-    });
-  };
+  Beach.hasMany(models.Lifeguard, {
+    foreignKey: 'lifeguardId'
+  });
+};
 
 ...
 ```
@@ -110,7 +110,6 @@ Beach.getOne({name: 'Papohaku Beach', include: [{model: Lifeguard}] })
     console.log('Got beach:', beach) //Will include the beach's properties and a list of all Lifeguards who have that beach's id on them
 });
 ```
-
 ### Next Steps
 Before moving on to migrations in the next exercise, create a Beach and a Lifeguard model with the CLI tool and update each in the current required syntax, as mentioned above
 
