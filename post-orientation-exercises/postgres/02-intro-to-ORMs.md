@@ -39,7 +39,7 @@ Next, a quick `sequelize init` at the root of your project will create the basic
 └── seeders
 ```
 
-Open up `congig/config.json` in your editor. Here, you will see three configurations for three different environments: development, testing, and production. That's cool. Now you can mess around with building db in development mode, run tests against a whole other version in test mode, and keep a clean version, free from fake data and db-breaking experiments, when running in production.
+Open up `config/config.json` in your editor. Here, you will see three configurations for three different environments: development, testing, and production. That's cool. Now you can mess around with building db in development mode, run tests against a whole other version in test mode, and keep a clean version, free from fake data and db-breaking experiments, when running in production.
 
 For simplicity's sake, just worry about changing the default settings in `development` to match your project's info. You won't need to worry about `username` or `password`. Feel free to delete those.
 

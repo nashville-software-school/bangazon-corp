@@ -1,5 +1,5 @@
 # Models
-Models are a representation in our code of how our data is structured in our databse.
+Models are a representation in our code of how our data is structured in our database.
 
 When using Sequelize, creating a model with the CLI tool using `model:create` will actually generate 2 files for you: a model file and a corresponding migration file. We will look first at the model, then in the next exercise we'll get into what that migration file is all about.
 

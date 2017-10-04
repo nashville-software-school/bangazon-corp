@@ -1,4 +1,4 @@
-# Sequelize Associations, or how to deal with bridge/associative/pivot/join/thingamajig tables and foriegn key relationships
+# Sequelize Associations, or how to deal with bridge/associative/pivot/join/thingamajig tables and foreign key relationships
 
 Remember way back in the mists of time, last month, when you learned about creating many-to-many relationships
 with a join table? Here's how to set up that relationship using Sequelize. Let's pretend we have a user who can select from a list of TV shows and add them to a collection of favorites. A show can have many users select it as a favorite, and users can have many favorite shows. We would represent that process with `User` and `Show` models that each declare a `belongsToMany` relationship in their `associate` methods.

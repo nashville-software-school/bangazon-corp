@@ -4,7 +4,7 @@ You've seeded data before, but Sequelize is going to make the process a bit easi
 
 Just like migrations, creating seed files with Sequleize requires the CLI tool. And, similar to migrations, you can create a seed file by running `sequelize seed:create --name my-seed-file`
 
-Knex will create a seed file with a timestamp and a `.js` extension. Open it up and it looks like this:
+Sequelize will create a seed file with a timestamp and a `.js` extension. Open it up and it looks like this:
 ```js
 'use strict';
 
@@ -49,7 +49,7 @@ When working with foreign key relationships, you will want to make sure that you
 Back to the database we made in the previous exercise. Go ahead and run those migrations so that our tables exist, and let's seed them with data.
 
 1. Create a seed file for your beaches and add at least three beaches to your database.
-1. Create a new seed file for your sandcastle tools and add some of those to the databse.
+1. Create a new seed file for your sandcastle tools and add some of those to the database.
 1. Confirm your seeded data has made it into the database by checking pgAdmin or psql.
 1. Create a new table called "castles" that includes a unique id, a description, a tool id (foreign key), and a beach id(foreign key).
 1. Create and run a seed file to seed your new castles table.

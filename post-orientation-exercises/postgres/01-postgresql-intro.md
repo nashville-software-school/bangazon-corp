@@ -1,7 +1,7 @@
 # PostgreSQL
 
 PostgreSQL is a powerful, open source object-relational database system. As a database server, its primary function is to store data securely, and to allow for retrieval at the request of other software applications.
-PostgreSQL ( or just Postgres, as we lazy devs tend to call it ), is one of a number of SQL dialects. Language-wise, it's indistinguishable from the syntax you have used to this point in SQLite. The big difference for you will the form PostgreSQL will take as a db. No more simple document stored in your project files. Instead you will spin up a dedicated db server. It will still be run locally, so no deployment yet, but it will take some new tools and methods to get used to. Installation is different depending on your platform ( Mac or PC ) and will be covered in class.
+PostgreSQL ( or just Postgres, as we lazy devs tend to call it ), is one of a number of SQL dialects. Language-wise, it's indistinguishable from the syntax you have used to this point in SQLite. The big difference for you will be the form PostgreSQL will take as a db. No more simple document stored in your project files. Instead you will spin up a dedicated db server. It will still be run locally, so no deployment yet, but it will take some new tools and methods to get used to. Installation is different depending on your platform ( Mac or PC ) and will be covered in class.
 
 # psql
 
