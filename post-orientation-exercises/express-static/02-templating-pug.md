@@ -4,11 +4,56 @@
 
 #### What is a templating engine?
 
-A template engine enables you to use static template files in your application. At runtime, the template engine first parses the template. This allows embedded JavaScript expressions and variables to be evaluated and then transformed into an HTML file which is sent to the client. This approach creates the ability to pipe data from the server to the template, so it can then be parsed and sent to the client.
+A template engine enables you to use static template files in your application. At runtime, the template engine first parses the template. This allows embedded JavaScript expressions and variables to be evaluated and then transformed into an HTML file which is sent to the client. This approach creates the ability to pipe data from the server to the template, so it can then be parsed and sent to the client. If that sounds familiar, it should. You have worked with templates before with Handlebars, and in the Anugular templating system.
 
 #### Pug
 
 Pug is a clean, whitespace sensitive syntax for writing html. We will be using the Pug templating engine with our Express server. Check out the [PugJs docs](https://pugjs.org/api/getting-started.html) for more information.
+
+BTW, Pug used to be called Jade. You will see references to Jade all over the place on the interwebs, since it was called that for a number of years.
+
+Pug and Handlebars are very similar in their goals and end results. You're still going to bind javascript values to templates to create views to render in a broswer. But the implementation is slightly different. the first thing you'll notice is the syntax. Pug uses HTML tags, but in a whitespace-dependent syntax that does away with angle brackets (`< >`) and closing tags. Proper indentation is _required_. Without properly indented
+code, Pug will refuse to cooperate.  (This is where your instructor tries not to say "I told you so")
+
+What's that mean? Take a look. A rendered page of HTML that looks like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pug</title>
+    <script type="text/javascript">
+      if (foo) bar(1 + 5)
+    </script>
+  </head>
+  <body>
+    <h1>Pug - node template engine</h1>
+    <div id="container" class="col">
+      <p>You are amazing</p>
+      <p>Pug is a terse and simple templating language with a strong focus on performance and powerful features.</p>
+    </div>
+  </body>
+</html>
+```
+Starts off looking like this in Pug:
+```pug
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+      if (foo) bar(1 + 5)
+  body
+    h1 Pug - node template engine
+    #container.col
+      if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Pug is a terse and simple templating language with a
+        strong focus on performance and powerful features.
+```
 
 ## Setup
 
@@ -30,9 +75,8 @@ pug_practice/
     nav.pug
   server.js
   README.md
-  package.json  
+  package.json
 ```
-
 
 ## Instructions
 
@@ -69,11 +113,15 @@ You have decided to finally pursue your life long dream of becoming a baker. Aft
 
 1. Create a `layout.pug` in the `views` directory. By using the `extends` and `block` keywords, we can create a single pug file that will act as a parent template and can be inherited, or `extended` in a child template. The `layout.pug` should contain the `html`, `head`, and `body` tags. It can also `include` the `nav.pug` since `layout.pug` can be extended in each of our files.
 
-  - Restructure `index.pug`, `about.pug` and `inventory.pug` to inherit `layout.pug`.
+1. Restructure `index.pug`, `about.pug` and `inventory.pug` to inherit `layout.pug`.
 
   HINT: Be sure to use the `block content` keywords in `layout.pug` where each child pug file will be shown.
 
+  Read all about the above right [here](https://pugjs.org/language/inheritance.html)
+
 
 ## Additional Reading
+[Using Templating Engines with Express](https://expressjs.com/en/guide/using-template-engines.html)
 
--   [Using Templating Engines with Express](https://expressjs.com/en/guide/using-template-engines.html)
+[The Pug API](pugjs.org/api/reference.html)
+
