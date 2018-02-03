@@ -1,8 +1,8 @@
 # Initial Course Installs
 
-## SQL Browser
+## TablePlus
 
-The [DB browser for SQLite](http://sqlitebrowser.org/) will let you view, query and manage your databases during the course.
+[TablePlus](https://tableplus.io/) will let you view, query and manage your SQLite databases during the course.
 
 ## Node
 You installed this on day one of NSS, and no additional updates are needed. Lucky you!
@@ -35,4 +35,4 @@ $ node
 bow down to me
 ```
 
-`ctrl + C` twice to exit the 
+`ctrl + C` twice to exit the
