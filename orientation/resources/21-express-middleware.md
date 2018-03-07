@@ -32,7 +32,7 @@ In our Express routes we have a definition that would look like `GET /:petType/b
 This route would match our request that we sent from the browser. When the request comes into the Express router, the route parameters `:petType` and `:petId` will be parsed from the incoming URI and made available via `req.params.petType` and `req.params.petId`. Because we included a query string (`?spayed=true`), the updated path parameter would become `/:petType/breeds/:breedName/:petId?`. The query-string part of the URI is not used in routing decisions, but the `spayed` parameter would be available as a property on `req.query`. So, in our example, checking for `req.query.spayed` in our callback function would give us `true`.
 
 ### Middleware
-Remember from the earlier http exercises you learned that Node.js http requests are readable streams, and node http responses are writable streams. When a request comes into the server, it travels through a pipeline. At each stage of the pipeline, a _middleware_ function can modify the stream, pass it on to the next function, or not pass it on. The most common middleware functionality needed are error managing, database interaction, getting info from static files or other resources.
+Node.js http requests are readable streams, and node http responses are writable streams. When a request comes into the server, it travels through a pipeline. At each stage of the pipeline, a _middleware_ function can modify the stream, pass it on to the next function, or not pass it on. The most common middleware functionality needed are error managing, database interaction, getting info from static files or other resources.
 
 Note that every middleware function takes three arguments: `(req, res, next)`. Those are the request object, the response object (look back at exercises 01 and 02 to jog your memory about request and response), and a function to run when the middleware is finished and ready to pass control to the next middleware in the stack. With those three it can do the following:
 
@@ -57,18 +57,18 @@ So you have a simple express server set up from the previous exercises. You are 
 You can tell your Express app to use a middleware that handles the request stream before sending back a response.
 
 ### app.use()
-Remember, in the previous exercise you learned that `use()` tells Express to load whatever middleware you pass to it. Whether that middleware actually _executes_ depends on how you set it up. For example, the following will run on every request:
+`use()` tells Express to load whatever middleware you pass to it. Whether that middleware actually _executes_ depends on how you set it up. For example, the following will run on every request:
 ```
 var app = express();
 
-app.use(function(req, res, next) {
+app.use( (req, res, next) => {
   console.log(req.method, req.url);
   next();
 });
 ```
 But this example passes in a route as the first argument, and therefore the code block will execute only on requests that match `/user/<some user id>`:
 ```
-app.use('/user/:id', function (req, res, next) {
+app.use('/user/:id', (req, res, next) => {
   console.log('Request Type:', req.method)
   next()
 });
