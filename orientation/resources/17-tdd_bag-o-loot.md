@@ -11,38 +11,38 @@ touch lootbag.js
 
 ## Instructions
 
-You have an acquaintance whose job is to, once a year, delivery presents to the best kids around the world. They have a problem, though. There are so many good boys and girls in the world now, that their old paper accounting systems just don't cut it anymore. They want you to write a program that will let them do the following tasks.
+You have an acquaintance whose job is to, once a year, deliver presents to the best kids around the world. They have a problem, though. There are so many good boys and girls in the world now, that their old paper accounting systems just don't cut it anymore. They want you to write a program that will let them do the following tasks.
 
 1. Add a toy to the bag o' loot, and label it with the child's name who will receive it.
 
     ```bash
-    ./lootbag.js add kite suzy
-    ./lootbag.js add baseball michael
+    node lootbag.js add kite suzy
+    node lootbag.js add baseball michael
     ```
 
 1. Remove a toy from the bag o' loot in case a child's status changes before delivery starts.
 
     ```bash
-    ./lootbag.js remove suzy kite
-    ./lootbag.js remove michael baseball
+    node lootbag.js remove suzy kite
+    node lootbag.js remove michael baseball
     ```
 
 1. Produce a list of children currently receiving presents.
 
     ```bash
-    ./lootbag.js ls
+    node lootbag.js ls
     ```
 
 1. List toys in the bag o' loot for a specific child.
 
     ```bash
-    ./lootbag.js ls suzy
+    node lootbag.js ls suzy
     ```
 
 1. Specify when a child's toys have been delivered.
 
     ```bash
-    ./lootbag.js delivered suzy
+    node lootbag.js delivered suzy
     ```
 
 
