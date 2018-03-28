@@ -18,7 +18,7 @@ Use test-driven development to build that logic of your app ( Do not test the UI
 
 ### The UI
 Use the [prompt npm package](https://www.npmjs.com/package/prompt)
-to facilitate interaction with the user on te command line. You can use the [colors](https://www.npmjs.com/package/colors) package to spice up the terminal view
+to facilitate interaction with the user on the command line. You can use the [colors](https://www.npmjs.com/package/colors) package to spice up the terminal view
 
 Example prompt: ( You do not need to make all of these actions available. Start with add new and view all, then move outward from there as stretch goals. )
 
