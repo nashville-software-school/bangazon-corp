@@ -14,7 +14,7 @@ GET all/one course
 DELETE a course
 POST a course
 
-Use test-driven development to buld that logic of your app ( Do not test the UI functionality). Remember to practice `red green refactor` and write no feature before the test for that feature, and only write enough code in each iteraction to make the test pass.
+Use test-driven development to build that logic of your app ( Do not test the UI functionality). Remember to practice `red green refactor` and write no feature before the test for that feature, and only write enough code in each iteraction to make the test pass.
 
 ### The UI
 Use the [prompt npm package](https://www.npmjs.com/package/prompt)
