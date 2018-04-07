@@ -21,13 +21,13 @@ Then, let's escape all the pressure and stress of NSS by building some sandcastl
 Oooh, nifty. Learn something new every day, right?
 
 Then `npm init` and install some dependencies
-`npm install --save sequelize`
+`npm install sequelize`
 While you're at it, throw an installation of PostgreSQL ( `pg` ) in there too. ( As of this writing, you may or may not need an additional installation of the `pg-hstore` module. Your intrepid instructors are keeping abreast of the latest from Sequelize Central. Doesn't hurt to include it for now )
 
 Launch postgres, then using psql in a new terminal window/tab, `CREATE DATABASE sandcastledb;`
 HINT: don't forget the ";" at the end of the statement, and avoid capital letters.
 
-Next, a quick `sequelize init` at the root of your project will create the basic folder/files you'll need. Your file structure should like something like this
+Next, a quick `sequelize init` at the root of your project will create the basic folder/files you'll need. The generated file structure should like something like this
 
 ```
 ├── config
@@ -41,7 +41,7 @@ Next, a quick `sequelize init` at the root of your project will create the basic
 
 Open up `config/config.json` in your editor. Here, you will see three configurations for three different environments: development, testing, and production. That's cool. Now you can mess around with building db in development mode, run tests against a whole other version in test mode, and keep a clean version, free from fake data and db-breaking experiments, when running in production.
 
-For simplicity's sake, just worry about changing the default settings in `development` to match your project's info. You won't need to worry about `username` or `password`. Feel free to delete those.
+For simplicity's sake, just worry about changing the default settings in `development` to match your project's info. You probably won't need to worry about `username` or `password`, but you may need to set them if you are using Windows. Input your postgres credentials -- often best to just use `postgres` `postgres`.
 
 Example
 ```js
@@ -56,7 +56,6 @@ Example
 ```
 Now you're ready to
 + Define the entities your db will store, as models
-+ Configure the tables that will hold instances of those models by creating migration files
 + Seed the db with some placeholder data
 
 The next resource files will walk through those steps.
