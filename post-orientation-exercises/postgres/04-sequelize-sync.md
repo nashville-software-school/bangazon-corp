@@ -33,9 +33,10 @@ When we check the tables in the terminal where we are running `psql`, we will se
 
 ## Exercise
 We're finally ready to create a database and fill it with useful tables.
+Tailor your beach and lifeguard models to have the properties you want, and to have a relationship to each other. Feel free to create a few more related entities as well.
+Avoid many-to-many relationships for the moment; we'll add those after we seed our data tables.
+Run the file that builds your tables, then use psql to check to see that they have been generated (and are empty). Check especially for their foreign keys!
 
-
-### Bonus
 
 
 [Sequelize Sync Options](http://sequelize.readthedocs.io/en/latest/api/sequelize/#sync)
