@@ -27,7 +27,7 @@ While you're at it, throw an installation of PostgreSQL ( `pg` ) in there too. (
 Launch postgres, then using psql in a new terminal window/tab, `CREATE DATABASE sandcastledb;`
 HINT: don't forget the ";" at the end of the statement, and avoid capital letters.
 
-Next, a quick `sequelize init` at the root of your project will create the basic folder/files you'll need. The generated file structure should like something like this
+Next, a quick `sequelize init` at the root of your project will create the basic folder/files you'll need. The generated file structure should look something like this
 
 ```
 ├── config

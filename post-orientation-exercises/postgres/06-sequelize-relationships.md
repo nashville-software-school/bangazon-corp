@@ -29,7 +29,7 @@ Show.associate = (models) => {
 This will automatically create the tables when you run your db generation file, but if you want to seed the join table, it will require an extra step.
 The bulkCreate method can only run on tables that have a model defined in the models directory, so in order to seed it, we'd have to create a model for it.
 
-If we want to allow duplicates of the same realtionship, we'll also need to specify `unique: false` and `constraints: false`. This isn't useful with users and favorite shows, but it might come in handy with other things later...
+If we want to allow duplicates of the same relationship, we'll also need to specify `unique: false` and `constraints: false`. This isn't useful with users and favorite shows, but it might come in handy with other things later...
 
 ```
 Show.belongsToMany(models.User, { 

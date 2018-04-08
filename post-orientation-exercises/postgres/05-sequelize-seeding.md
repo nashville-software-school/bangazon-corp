@@ -11,17 +11,17 @@ let sequelize = require('sequelize');
 let queryInterface = require('sequelize/lib/query-interface');
 
 const { users } = require('./data/users.json')
-const { Computers } = require('./data/computers.json')
+const { computers } = require('./data/computers.json')
 
 let createdb = (queryInterface) => {
   const app = require('./app');
-  const models = app.get('models');
+  const models = app.get('models'); //you will have an 'app.set()' in your app file that sets up the path for the models variable.
   return models.sequelize.sync({ force: true })
     .then((queryInterface) => {
       return models.User.bulkCreate(users);
     })
     .then((queryInterface) => {
-      return models.Computer.bulkCreate(Computers);
+      return models.Computer.bulkCreate(computers);
     })
     .catch((err) => {
       console.log("ERRRR", err);

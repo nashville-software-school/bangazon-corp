@@ -57,7 +57,7 @@ Beach.associate = function(models) {
 
 ...
 ```
-(When naming `foreignKey`s in your models, think of the 'hasMany' as sending the foreignKey, and the 'belongsTo' as recieving it.)
+(When naming `foreignKey`s in your models, think of the 'hasMany' as sending the foreignKey, and the 'belongsTo' as receiving it.)
 ( For insight into how and when `associate` gets called, look at models/index.js )
 
 How can this model be useful? We can use the Beach model to easily create and add properties to a new beach instance without writing raw sql. Sequelize models are build using ES6 Class syntax. Don't worry that you haven't written Classes before. A JS Class is just syntactic sugar on top of javascript objects that delegate values and behavior via the prototype chain. Just keep in mind that every time you save a new user, song, todo, beach, or lifeguard to a database, you are creating a new instance of a User/Song/Todo/Beach/Lifeguard model.
