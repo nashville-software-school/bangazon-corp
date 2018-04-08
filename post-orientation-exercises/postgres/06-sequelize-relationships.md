@@ -27,26 +27,20 @@ Show.associate = (models) => {
 ```
 
 This will automatically create the tables when you run your db generation file, but if you want to seed the join table, it will require an extra step.
+The bulkCreate method can only run on tables that have a model defined in the models directory, so in order to seed it, we'd have to create a model for it.
 
-//example from group project
-<!-- Order.belongsToMany(models.Product, { 
+If we want to allow duplicates of the same realtionship, we'll also need to specify `unique: false` and `constraints: false`. This isn't useful with users and favorite shows, but it might come in handy with other things later...
+
+```
+Show.belongsToMany(models.User, { 
       through: {
-        model: 'Product_Order',
+        model: 'UserFavorites',
         unique: false
       },
-      foreignKey: 'order_id',
+      foreignKey: 'show_id',
       constraints: false
     });
-
-    Product.belongsToMany(models.Order, {
-      through: {
-        model: 'Product_Order',
-        unique: false
-      },
-      foreignKey: 'product_id',
-      constraints: false
-    }); -->
-  
+```
 
 ### Exercise
 + Create a many-to-many relationship in your sandcastle code. Maybe update your Lifeguard model so that lifeguards can work at many beaches around town. Or add sandcastle types, and many kinds of tools can be used to build many kinds of sandcastles. Don't be afraid to commit. Dive into a new relationship!
