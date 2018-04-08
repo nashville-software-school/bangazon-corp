@@ -1,62 +1,49 @@
-### Seeding
+### Seeding with BulkCreate()
 
-You've seeded data before, but Sequelize is going to make the process a bit easier (although official documentation for this process is severely lacking as of this writing).
+You've seeded data before, but Sequelize is going to make the process a bit smoother.
 
-Just like migrations, creating seed files with Sequleize requires the CLI tool. And, similar to migrations, you can create a seed file by running `sequelize seed:create --name my-seed-file`
+Inside of the function that we just used to create the tables, we can now insert the necessary method to populate them with some data. This is the bulkCreate method on queryInterface.
 
-Sequelize will create a seed file with a timestamp and a `.js` extension. Open it up and it looks like this:
-```js
-'use strict';
+As before, you will need a json file where the keys match exactly with the column names of your db table. Import these from wherever they live, then you can bulkCreate them right into the tables.
 
-module.exports = {
-  up: function (queryInterface, Sequelize) {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+```
+let sequelize = require('sequelize');
+let queryInterface = require('sequelize/lib/query-interface');
 
-      Example:
-      return queryInterface.bulkInsert('Person', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
-  },
+const { users } = require('./data/users.json')
+const { computers } = require('./data/computers.json')
 
-  down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
+let createdb = (queryInterface) => {
+  const app = require('./app');
+  const models = app.get('models'); //you will have an 'app.set()' in your app file that sets up the path for the models variable.
+  return models.sequelize.sync({ force: true })
+    .then((queryInterface) => {
+      return models.User.bulkCreate(users);
+    })
+    .then((queryInterface) => {
+      return models.Computer.bulkCreate(computers);
+    })
+    .catch((err) => {
+      console.log("ERRRR", err);
+    })
+}
 
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
-};
+createdb(queryInterface);
 ```
 
-Update the commented-out example code with the table name you want to populate (change 'Person' to 'Orders', for example). Then pass in an array of objects that you want to insert into the db as the second argument.
-```js
-const { shows } = require('./data/shows'); //some random json file
-return queryInterface.bulkInsert('Shows', shows, {});
-```
-
-To seed your database, use `sequelize db:seed:all` to run all the seed files or `sequelize db:seed --seed seed_file_name` to seed one file. With `all`, the migrations are run by timestamps in ascending order. If you rename the files without the timestamps, you can name them in alphabetical order and they will run from a - z.
-
-When working with foreign key relationships, you will want to make sure that your seed fields are named appropriately so that tables that do not require foreign keys get seeded first, and the tables that rely on them are seeded afterward.
 
 ## Exercise
 
-Back to the database we made in the previous exercise. Go ahead and run those migrations so that our tables exist, and let's seed them with data.
+Back to the database we made in the previous exercise. Using the same file where we run `sync`, we'll also fill our tables with some seed data.
 
-1. Create a seed file for your beaches and add at least three beaches to your database.
-1. Create a new seed file for your sandcastle tools and add some of those to the database.
+1. Create json files for your beaches, lifeguards, and whatever else you are using with your sandcastles. Add at least three beaches to your database.
+1. Update and then re-run your db generation file.
 1. Confirm your seeded data has made it into the database by checking pgAdmin or psql.
 1. Create a new table called "castles" that includes a unique id, a description, a tool id (foreign key), and a beach id(foreign key).
-1. Create and run a seed file to seed your new castles table.
+1. Update your db generator to create and seed your new castles table.
 1. Have fun at the beach.
 
 ### Bonus
-1. Seed your lifeguards table.
 1. Create a simple Express.js app (No need to setup controllers, router modules, etc. Just build some routes right in app.js with `app.get('/beaches', ( req, res, next)), etc )
 1. After creating your Express server, fire it up and create at least three new beaches and four new lifeguards, and add them to your database with Postman
 1. Using a beach's id, console.log its data along with the data of any lifeguards who work there
