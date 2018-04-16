@@ -9,35 +9,31 @@ For our sandcastles project we will need some sandy locations to choose from, so
 
 ```js
 'use strict';
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   var Beach = sequelize.define('Beach', {
     name: DataTypes.STRING,
-    location: DataTypes.STRING,
-    sand_rating: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+    owner: DataTypes.STRING
+  }, {});
+  Beach.associate = function(models) {
+    // associations can be defined here
+  };
   return Beach;
 };
 ```
 
-Awesome, right? Also, unfortunately, a bit broken. As of this writing the CLI tool has not been updated to reflect recent breaking changes to how models need to be structured in Sequelize. You will need to update the file to look like this instead:
+Awesome, right? 
+
+That empty object right before the `.associate` property is where you can include options like `timestamps: false` and define your preferred table name (`tableName: "beaches"`) if you want to keep it lowercase.
 
 ```js
-// models/beach.js
-module.exports = function(sequelize, DataTypes) {
+'use strict';
+module.exports = (sequelize, DataTypes) => {
   var Beach = sequelize.define('Beach', {
     name: DataTypes.STRING,
-    location: DataTypes.STRING,
-    sand_rating: DataTypes.INTEGER
-  });
-
-  Beach.associate = (models) => {
-
+    owner: DataTypes.STRING
+  }, {timestamps: false, tableName: "beaches"});
+  Beach.associate = function(models) {
+    // associations can be defined here
   };
   return Beach;
 };
