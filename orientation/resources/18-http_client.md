@@ -45,21 +45,21 @@ Notice how most of the code above is about dealing with errors? Errors sent back
 We do eventually get to handling the expected data returned from our `get`, though. It's just a matter of setting up handlers to listen for the chunk(s) of data -- `res.on('data', <callback>)` -- and for when the stream of data has dried up -- `res.on('end', <callback>)`.
 
 ## Exercise 
-Write a program that performs an HTTP GET request to get the average stock
-price. Use the first argument for a ticker symbol. Use the `get` method in the
+Write a program that performs an HTTP GET request to get a Star Wars movie. Use the first argument for a title or episode_id. Use the `get` method in the
 `http` module with the API provided by
-[MarkitOnDemand](http://dev.markitondemand.com/).
+[SWAPI](https://swapi.co/).  
+*NOTE: Movies are numbered by production date (ie. films/2 for 'The Empire Strikes Back' or episode 5).
 
-It would certainly be easier to test if you can grab the latest stock price, but
-because the response is so small, there may not be an opportunity to demonstrate
-chunking. On the API docs you will see an example request for data to create a
-chart. This will give 365 of daily prices. Use these prices to get an average.
+In the terminal, output each planet that appears in the requested movie.
 
 Expected:
 
 ```bash
-$ ./stocks.js AAPL
-$123.45
+$ ./starwars.js 5
+Hoth
+Dagobah
+Bespin
+Ord Mantell
 ```
 
 ## Bonus
